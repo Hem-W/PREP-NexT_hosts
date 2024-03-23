@@ -4,7 +4,7 @@
 DNS_SERVER="10.246.128.120"
 
 # 需要解析的域名前缀列表
-DOMAINS=("shui" "mizu" "climate" "energy" "water" "land" "carbon" "moisture" "rainfall" "food" "PREP-NexT" "prep-next-printer")
+DOMAINS=("shui" "mizu" "climate" "energy" "water" "land" "carbon" "moisture" "rainfall" "PREP-NexT" "prep-next-printer")
 DOMAIN_ROOT="prepnext.nus.edu.sg"
 
 # hosts文件路径
