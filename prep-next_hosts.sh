@@ -106,7 +106,7 @@ done
 
 # 如果检测到变更，则询问用户是否要应用这些变更
 if [[ "$has_changes" == true ]]; then
-    read -p "Would you like to update $HOSTS_FILE? [y/N]." response
+    read -p "Would you like to update $HOSTS_FILE? [y/N]." response < /dev/tty
     if [[ $response =~ ^[Yy]$ ]]; then
         # 接受变更，清除并重新添加条目
         echo "The password may be needed to update $HOSTS_FILE"
