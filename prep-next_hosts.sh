@@ -111,6 +111,10 @@ if [[ "$has_changes" == true ]]; then
         # 接受变更，清除并重新添加条目
         echo "The password may be needed to update $HOSTS_FILE"
         $SUDO sed "${SED_I_OPTION[@]}" "/$START_MARKER/,/$END_MARKER/d" "$HOSTS_FILE"
+        if [ $? -ne 0 ]; then
+            echo "Failed to obtain permission to update $HOSTS_FILE. Aborting."
+            exit 1
+        fi
         echo "$START_MARKER" | $SUDO tee -a "$HOSTS_FILE"
         for DOMAIN in "${DOMAINS[@]}"; do
             FULL_DOMAIN="${DOMAIN}.${DOMAIN_ROOT}"
